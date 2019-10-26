@@ -1,0 +1,31 @@
+! This is the Regolith root-level Xresources file.
+!
+! -- Styles - Colors
+!
+! Uncomment one and only one of the following color definitions: 
+!#include "/etc/regolith/styles/color-solarized-dark"
+!#include "/etc/regolith/styles/color-solarized-light"
+!#include "/etc/regolith/styles/color-gruvbox"
+!#include "/etc/regolith/styles/color-nord"
+!#include "/etc/regolith/styles/color-ayu"
+!#include "/etc/regolith/styles/color-ayu-dark"
+!#include "/etc/regolith/styles/color-ayu-mirage"
+#include ".Xresources.d/color-mine"
+
+! -- Styles - Fonts
+! NOTE: Font packages may need to be installed when enabling typefaces.
+! Uncomment one and only one of the following font definitions:
+#include ".Xresources.d/typeface-mine"
+
+! -- Styles - Theme
+! The following theme requires flat remix blue darkest GTK and icon themes
+#include ".Xresources.d/theme-flat-remix"
+
+! -- Applications
+! These files map values defined above into specific app settings.
+#include "/etc/regolith/styles/st-term"
+#include "/etc/regolith/styles/i3-wm"
+#include "/etc/regolith/styles/i3xrocks"
+#include "/etc/regolith/styles/rofi"
+#include "/etc/regolith/styles/gnome"
+

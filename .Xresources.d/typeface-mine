@@ -1,0 +1,18 @@
+! Typeface: Ubuntu
+#define typeface_bar_glyph  Terminus 14
+#define typeface_bar        pango:FontAwesome 13
+#define typeface_rofi       Ubuntu Medium 16
+#define typeface_terminal   Terminus:pixelsize=16:lcdfilter=lcddefault:hintstyle=hintnone:rgba=rgb:antialias=false:autohint=false
+
+#define typeface_bar_glyph_wifi 
+#define typeface_bar_glyph_cpu 
+#define typeface_bar_glyph_battery_100 
+#define typeface_bar_glyph_battery_80 
+#define typeface_bar_glyph_battery_50 
+#define typeface_bar_glyph_battery_20 
+#define typeface_bar_glyph_battery_0 
+#define typeface_bar_glyph_battery_charging 
+#define typeface_bar_glyph_battery_ac 
+#define typeface_bar_glyph_battery_unknown 
+#define typeface_bar_glyph_time 
+#define typeface_bar_glyph_workspace 

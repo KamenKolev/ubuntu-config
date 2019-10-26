@@ -1,0 +1,1 @@
+# Configuration script turning Ubuntu 19.10 into a comfortable i3 desktop
