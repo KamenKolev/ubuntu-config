@@ -1,40 +1,51 @@
 #!/bin/bash
 
-echo "adding PPAs"
-add-apt-repository ppa:daniruiz/flat-remix
-add-apt-repository ppa:kgilmer/regolith-stable
+echo -e "\nadding PPAs\n"
+add-apt-repository ppa:daniruiz/flat-remix -y
+add-apt-repository ppa:kgilmer/regolith-stable -y
 
-echo "apt-get updating"
-apt-get update
-apt-get upgrade
+echo -e "\napt-get updating\n"
+apt-get update -y
+apt-get upgrade -y
 
-echo "installing git, regolith and xfonts-terminux"
-apt install git
-apt install regolith-desktop
-apt install xfonts-terminus
+echo -e "\ninstalling git, curl, regolith and xfonts-terminux\n"
+apt-get install git -y
+apt-get install curl -y
+apt-get install dconf-editor -y
+apt-get install regolith-desktop -y
+apt-get install xfonts-terminus -y
 
-echo "installing flat-remix"
-apt-get install flat-remix-gtk
-apt-get install flat-remix
+echo -e "\ninstalling flat-remix\n"
+apt-get install flat-remix-gtk -y
+apt-get install flat-remix -y
 
-echo "Configuring colors, i3 and compton"
+echo -e "\nConfiguring colors, i3 and compton\n"
 cp .Xresources-regolith ~
 cp -r .Xresources.d ~
 cp -r .config ~
 
-echo "merging shit"
+echo -e "\nmerging shit\n"
 xrdb -merge ~/.Xresources-regolith
 
-echo "installing & updating nodejs & npm"
-apt install nodejs
-apt install npm
+echo -e "\ninstalling & updating nodejs, npm, chromium\n"
+apt-get install nodejs -y
+apt-get install npm -y
 npm i -g n
 n latest
+apt-get install chromium-browser -y
 
-echo "installing & updating VSCode, Spotify, KeepassXC"
+echo -e "\nConfiguring keyboard shortcuts\n"
+dconf write /org/gnome/desktop/wm/keybindings/switch-input-source ['<Alt>Shift_L']
+dconf write /org/gnome/desktop/wm/keybindings/switch-input-source-backward ['<Alt>Shift_L']
+
+echo -e "\ninstalling & updating VSCode, Spotify, KeepassXC\n"
 snap install code
 snap install spotify
-apt install keepassxc
+apt-get install keepassxc -y
 
-echo "Restarting"
+echo -e "\nCleanup\n"
+apt remove dconf-editor -y
+apt autoremove
+
+echo -e "\nRestarting\n"
 shutdown -r 0
