@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\nadding PPAs\n"
+echo -e "\nAdding PPAs\n"
 add-apt-repository ppa:daniruiz/flat-remix -y
 add-apt-repository ppa:kgilmer/regolith-stable -y
 
@@ -8,14 +8,13 @@ echo -e "\napt-get updating\n"
 apt-get update -y
 apt-get upgrade -y
 
-echo -e "\ninstalling git, curl, regolith and xfonts-terminux\n"
-apt-get install git -y
+echo -e "\nInstalling curl, regolith and xfonts-terminux\n"
 apt-get install curl -y
 apt-get install dconf-editor -y
 apt-get install regolith-desktop -y
 apt-get install xfonts-terminus -y
 
-echo -e "\ninstalling flat-remix\n"
+echo -e "\nInstalling flat-remix\n"
 apt-get install flat-remix-gtk -y
 apt-get install flat-remix -y
 
@@ -24,10 +23,10 @@ cp .Xresources-regolith ~
 cp -r .Xresources.d ~
 cp -r .config ~
 
-echo -e "\nmerging shit\n"
+echo -e "\nMerging Xresources...\n"
 xrdb -merge ~/.Xresources-regolith
 
-echo -e "\ninstalling & updating nodejs, npm, chromium\n"
+echo -e "\nInstalling & updating nodejs, npm, chromium\n"
 apt-get install nodejs -y
 apt-get install npm -y
 npm i -g n
@@ -38,7 +37,7 @@ echo -e "\nConfiguring keyboard shortcuts\n"
 dconf write /org/gnome/desktop/wm/keybindings/switch-input-source ['<Alt>Shift_L']
 dconf write /org/gnome/desktop/wm/keybindings/switch-input-source-backward ['<Alt>Shift_L']
 
-echo -e "\ninstalling & updating VSCode, Spotify, KeepassXC\n"
+echo -e "\nInstalling & updating VSCode, Spotify, KeepassXC\n"
 snap install code
 snap install spotify
 apt-get install keepassxc -y
